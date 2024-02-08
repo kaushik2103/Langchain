@@ -51,6 +51,7 @@ parent_chain = SequentialChain(chains=[chain1, chain2, chain3], input_variables=
                                output_variables=["person", "dob", "description"],
                                verbose=True)
 
+# Integrate our code OpenAI API
 if input_text:
     st.write(parent_chain({'name': input_text}))
     with st.expander('Person Name'):
