@@ -15,7 +15,7 @@ from constant import openai_key
 os.environ["OPENAI_API_KEY"] = openai_key
 
 # Read PDF file
-pdfreader = PdfReader("D:/Machine_Learning/Langchain/QueryPDFLangchain/DSA.pdf")
+pdfreader = PdfReader("D:/Machine_Learning/Langchain/QueryPDFLangchain/budget_speech.pdf")
 raw_text = ""
 for i, page in enumerate(pdfreader.pages):
     content = page.extract_text()
@@ -45,7 +45,7 @@ documents_search = FAISS.from_texts(text, embeddings)
 chain = load_qa_chain(OpenAI(), chain_type="stuff")
 
 # Streamlit app to query the chain with user input
-st.title("Data Structure And Algorithms")
+st.title("Financial Budget Of India")
 query = st.text_input("Enter your question: ")
 
 if query:
